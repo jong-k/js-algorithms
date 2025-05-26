@@ -1,1 +1,31 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+logs
+*.log
+
+# 환경 변수 파일
+.env
+
+# 빌드 결과물
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# IDE 및 OS별 파일
+.DS_Store
+Thumbs.db
 .idea/
+.vscode/
+*.sublime-workspace
+
+# 기타
+*.tgz
+.eslintcache
+.node_repl_history
+.yarn-integrity
