@@ -6,11 +6,11 @@
 
 function findLongestSubstring(str) {
   let longest = 0;
-  let seen = {}; // 문자별로 0부터의 길이를 저장할 객체
+  const seen = {}; // 문자별로 0부터의 길이를 저장할 객체
   let start = 0;
 
   for (let i = 0; i < str.length; i++) {
-    let char = str[i];
+    const char = str[i];
     if (seen[char]) {
       // 재등장한 문자이면 start를 바꿈(old -> new)
       start = Math.max(start, seen[char]);

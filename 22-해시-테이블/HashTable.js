@@ -3,7 +3,8 @@
 // 그리고 키, 밸류를 그 인덱스에 저장하는 것임
 
 class HashTable {
-  constructor(size = 53) { // 해시테이블의 크기를 설정 -> 디폴트 53으로 해봄
+  constructor(size = 53) {
+    // 해시테이블의 크기를 설정 -> 디폴트 53으로 해봄
     this.keyMap = new Array(size); // 배열 생성
   }
 
@@ -33,18 +34,19 @@ class HashTable {
   get(key) {
     const index = this._hash(key);
     if (!this.keyMap[index]) return undefined;
-    for (let pair of this.keyMap[index]) {
+    for (const pair of this.keyMap[index]) {
       if (pair[0] === key) return pair[1];
     }
   }
 
   keys() {
     const keys = [];
-    for (let pair of this.keyMap) {
+    for (const pair of this.keyMap) {
       if (pair) {
-        if (typeof pair[0] === 'object') pair.forEach(el => {
-          if (!keys.includes(el[0])) keys.push(el[0]);
-        });
+        if (typeof pair[0] === "object")
+          pair.forEach((el) => {
+            if (!keys.includes(el[0])) keys.push(el[0]);
+          });
         else {
           if (!keys.includes(pair[0])) keys.push(pair[0]);
         }
@@ -55,11 +57,12 @@ class HashTable {
 
   values() {
     const values = [];
-    for (let pair of this.keyMap) {
+    for (const pair of this.keyMap) {
       if (pair) {
-        if (typeof pair[0] === 'object') pair.forEach(el => {
-          if (!values.includes(el[1])) values.push(el[1]);
-        });
+        if (typeof pair[0] === "object")
+          pair.forEach((el) => {
+            if (!values.includes(el[1])) values.push(el[1]);
+          });
         else {
           if (!values.includes(pair[1])) values.push(pair[1]);
         }
@@ -70,10 +73,10 @@ class HashTable {
 }
 
 const ht = new HashTable(17);
-ht.set('maroon', '#800000');
-ht.set('yellow', '#FFFF00');
-ht.set('olive', '#808000');
-ht.set('salmon', '#FA8072');
-ht.set('lightcoral', '#F08080');
-ht.set('mediumvioletred', '#C71585');
-ht.set('plum', '#DDA0DD');
+ht.set("maroon", "#800000");
+ht.set("yellow", "#FFFF00");
+ht.set("olive", "#808000");
+ht.set("salmon", "#FA8072");
+ht.set("lightcoral", "#F08080");
+ht.set("mediumvioletred", "#C71585");
+ht.set("plum", "#DDA0DD");

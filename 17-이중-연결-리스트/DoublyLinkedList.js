@@ -19,7 +19,8 @@ class DoublyLinkedList {
     if (this.head === null) {
       this.head = newNode;
       this.tail = newNode;
-    } else { // next 연결 -> prev 연결 -> tail 변경하면 임시 변수 필요없음 (메모리 줄이자)
+    } else {
+      // next 연결 -> prev 연결 -> tail 변경하면 임시 변수 필요없음 (메모리 줄이자)
       this.tail.next = newNode;
       newNode.prev = this.tail;
       this.tail = newNode;
@@ -41,7 +42,7 @@ class DoublyLinkedList {
     }
     this.length--;
     return poppedNode;
-    }
+  }
 
   shift() {
     if (this.length === 0) return undefined;
@@ -95,7 +96,7 @@ class DoublyLinkedList {
   }
 
   set(idx, val) {
-    let foundNode = this.get(idx);
+    const foundNode = this.get(idx);
     if (!foundNode) return false;
     foundNode.val = val;
     return true;
@@ -135,7 +136,10 @@ class DoublyLinkedList {
     // 뒤의 head에서부터 start ~ tail.next가 null이 될때까지 순회 (현재는 12)
     let currentNode = this.head;
     while (currentNode) {
-      [currentNode.next, currentNode.prev] = [currentNode.prev, currentNode.next];
+      [currentNode.next, currentNode.prev] = [
+        currentNode.prev,
+        currentNode.next,
+      ];
       currentNode = currentNode.next;
     }
     return this;

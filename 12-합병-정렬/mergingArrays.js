@@ -1,5 +1,5 @@
 function merge(arr1, arr2) {
-  let mergedArr = [];
+  const mergedArr = [];
   let leftIndex = 0;
   let rightIndex = 0;
   while (leftIndex < arr1.length && rightIndex < arr2.length) {

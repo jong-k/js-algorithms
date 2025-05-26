@@ -17,7 +17,7 @@ function averagePair(arr, target) {
   let right = arr.length - 1;
 
   while (left < right) {
-    let sum = arr[left] + arr[right];
+    const sum = arr[left] + arr[right];
     if (sum > 2 * target) {
       right--;
     } else if (sum < 2 * target) {

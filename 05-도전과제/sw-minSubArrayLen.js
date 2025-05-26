@@ -12,7 +12,7 @@ function minSubArrayLen(nums, sum) {
   let total = 0;
   let start = 0;
   let end = 0;
-  let minLen = Infinity;
+  let minLen = Number.POSITIVE_INFINITY;
 
   while (start < nums.length) {
     if (total < sum) {
@@ -26,5 +26,5 @@ function minSubArrayLen(nums, sum) {
       break;
     }
   }
-  return minLen === Infinity ? 0 : minLen;
+  return minLen === Number.POSITIVE_INFINITY ? 0 : minLen;
 }

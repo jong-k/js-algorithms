@@ -18,6 +18,6 @@ class PriorityQueue {
 
 const pq = new PriorityQueue();
 
-pq.enqueue('B', 3);
-pq.enqueue('C', 5);
-pq.enqueue('D', 2);
+pq.enqueue("B", 3);
+pq.enqueue("C", 5);
+pq.enqueue("D", 2);

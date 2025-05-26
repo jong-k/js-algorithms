@@ -24,7 +24,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
 function quickSort(arr, left = 0, right = arr.length - 1) {
   if (left < right) {
     // left === right 되면 배열 길이 1개 됨
-    let pivotPoint = pivot(arr, left, right); // 3 (4가 있어야 할 위치)
+    const pivotPoint = pivot(arr, left, right); // 3 (4가 있어야 할 위치)
     // left
     quickSort(arr, left, pivotPoint - 1);
     // right
@@ -33,5 +33,5 @@ function quickSort(arr, left = 0, right = arr.length - 1) {
   return arr;
 }
 
-let arr1 = [4, 6, 9, 1, 2, 5, 3];
+const arr1 = [4, 6, 9, 1, 2, 5, 3];
 console.log(quickSort(arr1)); // 스택오버플로 에러

@@ -1,4 +1,4 @@
-function getDigit (num, i) {
+function getDigit(num, i) {
   return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 }
 
@@ -15,12 +15,12 @@ function mostDigits(nums) {
   return maxDigits;
 }
 
-let nums = [23, 345, 5467, 12, 2345, 9852];
+const nums = [23, 345, 5467, 12, 2345, 9852];
 function radixSort(arr) {
   const maxDigitCount = mostDigits(arr);
   for (let i = 0; i < maxDigitCount; i++) {
     // 버켓 만들기 ([] 10개를 원소로 갖는 2차원 배열)
-    let digitBuckets = Array.from({length: 10}, () => []);
+    const digitBuckets = Array.from({ length: 10 }, () => []);
     for (let j = 0; j < arr.length; j++) {
       digitBuckets[getDigit(arr[j], i)].push(arr[j]);
     }

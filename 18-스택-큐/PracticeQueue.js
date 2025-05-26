@@ -1,8 +1,8 @@
 const q = [];
 
-q.push("FIRST")
-q.push("SECOND")
-q.push("THIRD")
+q.push("FIRST");
+q.push("SECOND");
+q.push("THIRD");
 console.log(q); // FIRST, SECOND, THIRD
 
 // 스택에서는 pop을 썼지만, 큐에서는 shift를 사용한다
@@ -10,4 +10,3 @@ console.log(q); // FIRST, SECOND, THIRD
 q.shift(); // FIRST
 q.shift(); // SECOND
 q.shift(); // THIRD
-

@@ -10,4 +10,4 @@ function NaiveStringSearch(text, str) {
   return count;
 }
 
-console.log(NaiveStringSearch('wooparoopa', 'oo')); // 2
+console.log(NaiveStringSearch("wooparoopa", "oo")); // 2

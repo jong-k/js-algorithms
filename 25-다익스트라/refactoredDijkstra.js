@@ -11,16 +11,17 @@ class PriorityQueue {
     this.values = [];
   }
   enqueue(val, priority) {
-    let newNode = new Node(val, priority);
+    const newNode = new Node(val, priority);
     this.values.push(newNode);
     this.bubbleUp();
   }
   bubbleUp() {
     let idx = this.values.length - 1;
     const element = this.values[idx];
-    while (idx > 0) { // 루트 idx가 0이기 때문에
-      let parentIdx = Math.floor((idx - 1) / 2);
-      let parent = this.values[parentIdx];
+    while (idx > 0) {
+      // 루트 idx가 0이기 때문에
+      const parentIdx = Math.floor((idx - 1) / 2);
+      const parent = this.values[parentIdx];
       if (element.priority >= parent.priority) break;
       this.values[parentIdx] = element;
       this.values[idx] = parent;
@@ -41,8 +42,8 @@ class PriorityQueue {
     const length = this.values.length;
     const element = this.values[0];
     while (true) {
-      let leftIdx = 2 * idx + 1;
-      let rightIdx = 2 * idx + 2;
+      const leftIdx = 2 * idx + 1;
+      const rightIdx = 2 * idx + 2;
       let left, right; // 범위 확인 전 초기화
       let swap = null;
       if (leftIdx < length) {
@@ -53,7 +54,10 @@ class PriorityQueue {
       }
       if (rightIdx < length) {
         right = this.values[rightIdx];
-        if ((swap === null && right.priority < element.priority) || (swap !== null && right.priority < left.priority)) {
+        if (
+          (swap === null && right.priority < element.priority) ||
+          (swap !== null && right.priority < left.priority)
+        ) {
           swap = rightIdx;
         }
       }
@@ -80,10 +84,10 @@ class WeightedGraph {
     const nodes = new PriorityQueue();
     const distances = {};
     const previous = {};
-    let path = [];
+    const path = [];
     let smallest;
     // 초기값 입력
-    for (let vertex in this.adjacencyList) {
+    for (const vertex in this.adjacencyList) {
       if (vertex === start) {
         distances[vertex] = 0;
         nodes.enqueue(vertex, 0);
@@ -104,12 +108,12 @@ class WeightedGraph {
         break;
       }
       if (smallest || distances[smallest] !== Number.MAX_SAFE_INTEGER) {
-        for (let neighbor in this.adjacencyList[smallest]) {
+        for (const neighbor in this.adjacencyList[smallest]) {
           // 인접 노드 찾기
-          let nextNode = this.adjacencyList[smallest][neighbor];
+          const nextNode = this.adjacencyList[smallest][neighbor];
           // 거리 계산
-          let candidate = distances[smallest] + nextNode.weight;
-          let nextNeighbor = nextNode.node;
+          const candidate = distances[smallest] + nextNode.weight;
+          const nextNeighbor = nextNode.node;
           if (candidate < distances[nextNeighbor]) {
             // 거리 업데이트
             distances[nextNeighbor] = candidate;
@@ -126,20 +130,20 @@ class WeightedGraph {
 
 const g = new WeightedGraph();
 // 정점 추가
-g.addVertex('A');
-g.addVertex('B');
-g.addVertex('C');
-g.addVertex('D');
-g.addVertex('E');
-g.addVertex('F');
+g.addVertex("A");
+g.addVertex("B");
+g.addVertex("C");
+g.addVertex("D");
+g.addVertex("E");
+g.addVertex("F");
 // 간선 추가
-g.addEdge('A', 'B', 4);
-g.addEdge('A', 'C', 2);
-g.addEdge('B', 'E', 3);
-g.addEdge('C', 'D', 2);
-g.addEdge('C', 'F', 4);
-g.addEdge('D', 'E', 3);
-g.addEdge('D', 'F', 1);
-g.addEdge('F', 'E', 1);
+g.addEdge("A", "B", 4);
+g.addEdge("A", "C", 2);
+g.addEdge("B", "E", 3);
+g.addEdge("C", "D", 2);
+g.addEdge("C", "F", 4);
+g.addEdge("D", "E", 3);
+g.addEdge("D", "F", 1);
+g.addEdge("F", "E", 1);
 
-g.dijkstra('A', 'E');
+g.dijkstra("A", "E");

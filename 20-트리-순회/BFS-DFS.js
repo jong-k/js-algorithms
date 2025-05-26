@@ -57,7 +57,8 @@ class BinarySearchTree {
   }
 
   BreadthFirstSearch() {
-    const data = [], queue = [];
+    const data = [],
+      queue = [];
     queue.push(this.root);
     while (queue.length) {
       const current = queue.shift();
@@ -75,7 +76,7 @@ class BinarySearchTree {
       data.push(node); // node.val로 해도 됨
       node.left && traverse(node.left);
       node.right && traverse(node.right);
-    }
+    };
     traverse(current);
     return data;
   }
@@ -87,7 +88,7 @@ class BinarySearchTree {
       if (node.left) traverse(node.left);
       if (node.right) traverse(node.right);
       data.push(node); // node.val로 해도 됨
-    }
+    };
     traverse(current);
     return data;
   }
@@ -99,13 +100,13 @@ class BinarySearchTree {
       if (node.left) traverse(node.left);
       data.push(node); // node.val로 해도 됨
       if (node.right) traverse(node.right);
-    }
+    };
     traverse(current);
     return data;
   }
 }
 
-let tree = new BinarySearchTree();
+const tree = new BinarySearchTree();
 tree.insert(10);
 tree.insert(6);
 tree.insert(15);

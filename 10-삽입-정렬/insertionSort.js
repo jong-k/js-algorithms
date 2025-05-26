@@ -2,7 +2,7 @@
 
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
-    let picked = arr[i];
+    const picked = arr[i];
     for (let j = 0; j < i; j++) {
       if (picked < arr[j]) [arr[i], arr[j]] = [arr[j], arr[i]];
     }

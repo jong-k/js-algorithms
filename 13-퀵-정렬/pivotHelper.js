@@ -9,7 +9,7 @@
 //
 // 4 2 1 3 5 7 6 8 p: 3
 
-let arr1 = [4, 8, 2, 1, 5, 7, 6, 3];
+const arr1 = [4, 8, 2, 1, 5, 7, 6, 3];
 
 function pivot(arr, start = 0, end = arr.length - 1) {
   let pivotIdx = 0; // 피벗 포인트를 맨 처음으로 설정

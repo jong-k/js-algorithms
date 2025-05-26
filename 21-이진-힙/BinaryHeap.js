@@ -11,9 +11,10 @@ class MaxBinaryHeap {
   bubbleUp() {
     let idx = this.values.length - 1;
     const element = this.values[idx];
-    while (idx > 0) { // 루트 idx가 0이기 때문에
-      let parentIdx = Math.floor((idx - 1) / 2);
-      let parent = this.values[parentIdx];
+    while (idx > 0) {
+      // 루트 idx가 0이기 때문에
+      const parentIdx = Math.floor((idx - 1) / 2);
+      const parent = this.values[parentIdx];
       if (element <= parent) break;
       this.values[parentIdx] = element;
       this.values[idx] = parent;
@@ -38,8 +39,8 @@ class MaxBinaryHeap {
     const length = this.values.length;
     const element = this.values[0];
     while (true) {
-      let leftIdx = 2 * idx + 1;
-      let rightIdx = 2 * idx + 2;
+      const leftIdx = 2 * idx + 1;
+      const rightIdx = 2 * idx + 2;
       let left, right; // 범위 확인 전 초기화
       let swap = null;
       if (leftIdx < length) {
@@ -50,7 +51,10 @@ class MaxBinaryHeap {
       }
       if (rightIdx < length) {
         right = this.values[rightIdx];
-        if ((swap === null && right > element) || (swap !== null && right > left)) {
+        if (
+          (swap === null && right > element) ||
+          (swap !== null && right > left)
+        ) {
           swap = rightIdx;
         }
       }

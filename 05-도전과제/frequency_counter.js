@@ -9,20 +9,20 @@ function sameFrequency(a, b) {
     //  .toString() 왜 안되지..
     return false;
   }
-  let aCounter = {};
-  let bCounter = {};
+  const aCounter = {};
+  const bCounter = {};
 
-  for (let c of String(a)) {
+  for (const c of String(a)) {
     // let 안빼먹게 주의
     aCounter[c] = (aCounter[c] || 0) + 1; // aCounter.c 처럼 표현하면 에러
   }
 
-  for (let c of String(b)) {
+  for (const c of String(b)) {
     bCounter[c] = (bCounter[c] || 0) + 1;
   }
 
   let result = true;
-  for (let item in aCounter) {
+  for (const item in aCounter) {
     if (aCounter[item] !== bCounter[item]) {
       result = false; // 바로 false를 return하게끔 해도 됨
       break;

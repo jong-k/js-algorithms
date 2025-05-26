@@ -8,9 +8,9 @@
 
 // frequency counter 패턴 사용
 function areThereDuplicates(...args) {
-  let obj = {};
+  const obj = {};
   let check = false;
-  for (let el of args) {
+  for (const el of args) {
     obj[el] = (obj[el] || 0) + 1;
     if (obj[el] > 1) check = true;
   }

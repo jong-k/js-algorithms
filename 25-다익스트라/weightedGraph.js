@@ -10,8 +10,8 @@ class WeightedGraph {
     this.adjacencyList[v2].push({ node: v1, weight });
   }
   removeEdge(v1, v2) {
-    this.adjacencyList[v1] = this.adjacencyList[v1].filter(v => v !== v2);
-    this.adjacencyList[v2] = this.adjacencyList[v2].filter(v => v !== v1);
+    this.adjacencyList[v1] = this.adjacencyList[v1].filter((v) => v !== v2);
+    this.adjacencyList[v2] = this.adjacencyList[v2].filter((v) => v !== v1);
   }
   removeVertex(name) {
     while (this.adjacencyList[name].length) {
@@ -27,21 +27,21 @@ class WeightedGraph {
       if (!vertex) return;
       result.push(vertex);
       isVisited[vertex] = true;
-      this.adjacencyList[vertex].forEach(neighbor => {
+      this.adjacencyList[vertex].forEach((neighbor) => {
         if (!isVisited[neighbor]) DFSR(neighbor);
       });
-    }
+    };
     DFSR(start);
     return result;
   }
   depthFirstSearchIterative(start) {
     const stack = [start];
     const result = [];
-    const isVisited = {[start]: true};
+    const isVisited = { [start]: true };
     while (stack.length) {
       const currentVertex = stack.pop();
       result.push(currentVertex);
-      this.adjacencyList[currentVertex].forEach(neighbor => {
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
         if (!isVisited[neighbor]) {
           isVisited[neighbor] = true;
           stack.push(neighbor);
@@ -53,11 +53,11 @@ class WeightedGraph {
   breadthFirstSearch(start) {
     const queue = [start];
     const result = [];
-    const isVisited = {[start]: true};
+    const isVisited = { [start]: true };
     while (queue.length) {
       const currentVertex = queue.shift();
       result.push(currentVertex);
-      this.adjacencyList[currentVertex].forEach(neighbor => {
+      this.adjacencyList[currentVertex].forEach((neighbor) => {
         if (!isVisited[neighbor]) {
           isVisited[neighbor] = true;
           queue.push(neighbor);

@@ -22,7 +22,8 @@ class SinglyLinkedList {
   }
   push(val) {
     const newNode = new Node(val);
-    if (!this.head) { // 값이 없으면
+    if (!this.head) {
+      // 값이 없으면
       this.head = newNode;
       this.tail = this.head; // newNode 대신 this.head 를 가리키게 함
     } else {
@@ -36,14 +37,16 @@ class SinglyLinkedList {
     if (!this.head) return undefined;
     let current = this.head;
     let newTail = current;
-    while (current.next) { // current.next 가 null 이 되기 직전에 멈춤
+    while (current.next) {
+      // current.next 가 null 이 되기 직전에 멈춤
       newTail = current; // while 이 끝나면 tail 직전
       current = current.next; // while 이 끝나면 tail
     }
     this.tail = newTail;
     this.tail.next = null;
     this.length--;
-    if (this.length === 0) { // 이 조건 추가하지 않으면 pop 계속 가능
+    if (this.length === 0) {
+      // 이 조건 추가하지 않으면 pop 계속 가능
       this.head = null;
       this.tail = null;
     }
@@ -52,7 +55,7 @@ class SinglyLinkedList {
   // head / tail 먼저 바꾸고 그 다음에 연결 끊는 방식 주로 사용
   shift() {
     if (!this.head) return undefined;
-    let currentHead = this.head;
+    const currentHead = this.head;
     this.head = this.head.next; // 1개 남은 리스트일 경우 head 가 자동으로 null 됨
     this.length--;
     if (this.length === 0) {
@@ -72,28 +75,30 @@ class SinglyLinkedList {
     this.length++;
     return this;
   }
-  
-  get(idx) { // node 값을 반환하는게 아니라 node 자체를 반환
-    if (idx < 0 || idx >= this.length) return null
+
+  get(idx) {
+    // node 값을 반환하는게 아니라 node 자체를 반환
+    if (idx < 0 || idx >= this.length) return null;
     let counter = 0;
     let current = this.head;
     while (counter !== idx) {
-      counter++
+      counter++;
       current = current.next;
     }
     return current;
   }
-  
+
   set(idx, val) {
-    let foundNode = this.get(idx);
+    const foundNode = this.get(idx);
     if (!foundNode) return false;
     foundNode.val = val;
     return true;
   }
-  
+
   insert(idx, val) {
     if (idx < 0 || idx > this.length) return false;
-    else if (idx === 0 && this.unshift(val)) return true; // return !!this.unshift(val) 방법도 있음
+    else if (idx === 0 && this.unshift(val))
+      return true; // return !!this.unshift(val) 방법도 있음
     else if (idx === this.length && this.push(val)) return true;
     else {
       const newNode = new Node(val);
@@ -104,7 +109,7 @@ class SinglyLinkedList {
       return true;
     }
   }
-  
+
   // currentNode.next = null 은 굳이 필요없음
   remove(idx) {
     if (idx < 0 || idx >= this.length) return undefined;
@@ -124,7 +129,8 @@ class SinglyLinkedList {
     [this.head, this.tail] = [this.tail, this.head];
     let prevNode = null;
     let nextNode;
-    while (currentNode) { // 11
+    while (currentNode) {
+      // 11
       nextNode = currentNode.next; // 12
       currentNode.next = prevNode; // 11 <- 12
       prevNode = currentNode; // prev : 11
@@ -132,18 +138,20 @@ class SinglyLinkedList {
     }
     return this;
   }
-  
-  print() { // reverse 메서드를 테스트하기 위해 구현한 함수
-    let arr = [];
+
+  print() {
+    // reverse 메서드를 테스트하기 위해 구현한 함수
+    const arr = [];
     let current = this.head;
     while (current) {
       arr.push(current.val);
-      current = current.next
+      current = current.next;
     }
     console.log(arr); // 리스트를 어레이 형태로 출력
   }
 
-  rotate(num) { // n회 회전
+  rotate(num) {
+    // n회 회전
     const realNum = num % 5;
     if (realNum > 0) {
       for (let i = 0; i < realNum; i++) {

@@ -22,7 +22,7 @@ class BinarySearchTree {
       if (val === current.val) return undefined;
       if (val > current.val) {
         if (current.right) {
-            current = current.right;
+          current = current.right;
         } else {
           current.right = newNode;
           return this;

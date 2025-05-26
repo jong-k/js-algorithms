@@ -4,7 +4,7 @@
 
 function productOfArray(arr) {
   if (arr.length === 0) return 1;
-  let popped = arr.pop();
+  const popped = arr.pop();
   return popped * productOfArray(arr);
 }
 

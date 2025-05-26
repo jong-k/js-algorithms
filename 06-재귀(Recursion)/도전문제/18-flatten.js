@@ -4,7 +4,7 @@
 // flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3]
 
 function flatten(array) {
-  return array.flat(Infinity);
+  return array.flat(Number.POSITIVE_INFINITY);
 }
 
 console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [ 1, 2, 3 ]

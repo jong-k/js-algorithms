@@ -37,15 +37,17 @@ rl.on("line", (line) => {
   input.push(line);
 }).on("close", () => {
   const N = +input.shift();
-  const data = input.map(el => el.split(" ").map(Number)).sort((a, b) => {
-    if (a[1] === b[1]) return a[0] - b[0];
-    return a[1] - b[1];
-  });
+  const data = input
+    .map((el) => el.split(" ").map(Number))
+    .sort((a, b) => {
+      if (a[1] === b[1]) return a[0] - b[0];
+      return a[1] - b[1];
+    });
   let current = 0;
   for (let i = 0; i < N; i++) {
     if (current > data[i][0]) continue;
     answer++;
-    current = data[i][1]
+    current = data[i][1];
   }
   console.log(answer);
 });

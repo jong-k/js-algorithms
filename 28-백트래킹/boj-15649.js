@@ -9,21 +9,24 @@ const arr = [];
 const isUsed = [];
 const answer = [];
 
-const backTracking = (k) => { // 3
-  if (k === M) { // 3에서 같아짐
-    answer.push(arr.join(' ')); // answer = ['1 2 3' , '1 2 4', ]
+const backTracking = (k) => {
+  // 3
+  if (k === M) {
+    // 3에서 같아짐
+    answer.push(arr.join(" ")); // answer = ['1 2 3' , '1 2 4', ]
     return;
   }
 
   for (let i = 1; i <= N; i++) {
-    if (!isUsed[i]) { // i = 4
+    if (!isUsed[i]) {
+      // i = 4
       arr[k] = i; // arr[0] = 1, arr[1] = 2, arr[3] = 4
       isUsed[i] = 1; // isUsed[1] = 1, isUsed[2] = 1, isUsed[4] = 1
       backTracking(k + 1); // 1 depth 아래로 내려감 k = 3
       isUsed[i] = 0; // isUsed[3] = 0, 현재 isUsed = [ , 1, 0, 0, 0]
     }
   }
-}
+};
 
 backTracking(0);
-console.log(answer.join('\n'));
+console.log(answer.join("\n"));

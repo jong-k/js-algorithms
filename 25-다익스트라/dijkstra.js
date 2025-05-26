@@ -31,10 +31,10 @@ class WeightedGraph {
     const nodes = new PriorityQueue();
     const distances = {};
     const previous = {};
-    let path = [];
+    const path = [];
     let smallest;
     // 초기값 입력
-    for (let vertex in this.adjacencyList) {
+    for (const vertex in this.adjacencyList) {
       if (vertex === start) {
         distances[vertex] = 0;
         nodes.enqueue(vertex, 0);
@@ -58,12 +58,13 @@ class WeightedGraph {
       // 좌항은 smallest가 있을떄 (모든 큐 소진 x)
       // 우항은 초기값일때
       if (smallest || distances[smallest] !== Number.MAX_SAFE_INTEGER) {
-        for (let neighbor in this.adjacencyList[smallest]) { // neighbor는 인덱스
+        for (const neighbor in this.adjacencyList[smallest]) {
+          // neighbor는 인덱스
           // 인접 노드 찾기
-          let nextNode = this.adjacencyList[smallest][neighbor];
+          const nextNode = this.adjacencyList[smallest][neighbor];
           // 거리 계산
-          let candidate = distances[smallest] + nextNode.weight;
-          let nextNeighbor = nextNode.node;
+          const candidate = distances[smallest] + nextNode.weight;
+          const nextNeighbor = nextNode.node;
           if (candidate < distances[nextNeighbor]) {
             // 거리 업데이트
             distances[nextNeighbor] = candidate;
@@ -73,30 +74,28 @@ class WeightedGraph {
           }
         }
       }
-
     }
     return path.concat(smallest).reverse();
   }
-
 }
 
 const g = new WeightedGraph();
 // 정점 추가
-g.addVertex('A');
-g.addVertex('B');
-g.addVertex('C');
-g.addVertex('D');
-g.addVertex('E');
-g.addVertex('F');
+g.addVertex("A");
+g.addVertex("B");
+g.addVertex("C");
+g.addVertex("D");
+g.addVertex("E");
+g.addVertex("F");
 // 간선 추가
-g.addEdge('A', 'B', 4);
-g.addEdge('A', 'C', 2);
-g.addEdge('B', 'E', 3);
-g.addEdge('C', 'D', 2);
-g.addEdge('C', 'F', 4);
-g.addEdge('D', 'E', 3);
-g.addEdge('D', 'F', 1);
-g.addEdge('F', 'E', 1);
+g.addEdge("A", "B", 4);
+g.addEdge("A", "C", 2);
+g.addEdge("B", "E", 3);
+g.addEdge("C", "D", 2);
+g.addEdge("C", "F", 4);
+g.addEdge("D", "E", 3);
+g.addEdge("D", "F", 1);
+g.addEdge("F", "E", 1);
 // 인접 리스트
 /*
 A: [{ node: 'B', weight: 4 }, { node: 'C', weight: 2 }],
