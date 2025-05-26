@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/jong-k/js-algorithms/issues"
   },
-  "homepage": "https://github.com/jong-k/js-algorithms#readme"
+  "homepage": "https://github.com/jong-k/js-algorithms#readme",
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
 }
