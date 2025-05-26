@@ -18,10 +18,9 @@ function areThereDuplicates(...args) {
     if (args[left] === args[right]) {
       right++;
       return true;
-    } else {
-      left = right;
-      right++;
     }
+    left = right;
+    right++;
   }
   return false;
 }

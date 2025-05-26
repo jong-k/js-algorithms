@@ -9,8 +9,8 @@
 // Set 객체 사용
 // Set 객체는 중복을 제거하고 저장한다
 // Set.size 는 set 객체의 원소 수를 반환한다
-function areThereDuplicates() {
-  return new Set(arguments).size !== arguments.length;
+function areThereDuplicates(...args) {
+  return new Set(args).size !== args.length;
 }
 
-console.log(areThereDuplicates(1233, 3121, 3333)); // false
+console.log(areThereDuplicates(1233, 3121, 3333, 3333)); // true
