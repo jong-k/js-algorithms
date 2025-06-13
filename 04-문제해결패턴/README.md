@@ -11,11 +11,11 @@
 
 #### naive solution: O(N^2)
 
-same.js
+./frequency-counter/same.js
 
 #### refactored solution: O(N)
 
-sameRefactored.js
+./frequency-counter/sameRefactored.js
 
 ### 예제2 애너그램 (Anagram) 판별
 
@@ -26,13 +26,13 @@ sameRefactored.js
 
 #### 1st solution
 
-validAnagram.js
+./frequency-counter/validAnagram.js
 
 - 불필요한 frequency counter 객체를 2개 만듬
 
 #### refactored solution
 
-validAnagramRefactorerd.js
+./frequency-counter/validAnagramRefactorerd.js
 
 - 불필요한 2번째 문자열 counting 제거
 
@@ -47,13 +47,13 @@ validAnagramRefactorerd.js
 
 #### naive solution
 
-sumZero.js
+./two-pointer/sumZero.js
 
 - O(N^2)
 
 #### refactored solution
 
-sumZeroRefactored.js
+./two-pointer/sumZeroRefactored.js
 
 - O(N)
 
@@ -65,13 +65,13 @@ sumZeroRefactored.js
 
 #### 1st solution
 
-countUniqueValues.js
+./two-pointer/countUniqueValues.js
 
 - Set 객체를 사용하여 매우 간단
 
 #### two pointer version
 
-countUniqueValuesWithPointer.js
+./two-pointer/countUniqueValuesWithPointer.js
 
 - 투포인터 방식 활용
 
@@ -88,6 +88,6 @@ countUniqueValuesWithPointer.js
 
 #### solution
 
-maxSubarraySum.js
+./sliding-window/maxSubarraySum.js
 
 - O(N)
