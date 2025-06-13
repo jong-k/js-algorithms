@@ -1,15 +1,18 @@
 function validAnagram(word1, word2) {
   if (word1.length !== word2.length) return false;
 
-  const lookup = {};
+  const frequencyCounter1 = {};
+  const frequencyCounter2 = {};
 
   for (const char of word1) {
-    lookup[char] = (lookup[char] || 0) + 1;
+    frequencyCounter1[char] = (frequencyCounter1[char] || 0) + 1;
+  }
+  for (const char of word2) {
+    frequencyCounter2[char] = (frequencyCounter2[char] || 0) + 1;
   }
 
-  for (const char of word2) {
-    if (!lookup[char]) return false;
-    lookup[char] -= 1;
+  for (const key in frequencyCounter1) {
+    if (frequencyCounter1[key] !== frequencyCounter2[key]) return false;
   }
 
   return true;
