@@ -4,10 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "format": "npx @biomejs/biome format --write .",
-    "lint": "npx @biomejs/biome lint --write .",
-    "check": "npx @biomejs/biome check --write ."
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -21,6 +18,11 @@
   },
   "homepage": "https://github.com/jong-k/js-algorithms#readme",
   "devDependencies": {
-    "@biomejs/biome": "1.9.4"
+    "@eslint/js": "^9.28.0",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.1",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3"
   }
 }
