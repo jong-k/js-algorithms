@@ -1,8 +1,8 @@
 function maxSubarraySum(arr, k) {
+  if (arr.length < k) return null;
+
   let maxSum = 0;
   let currentSum = 0;
-
-  if (arr.length < k) return null;
 
   for (let i = 0; i < k; i++) {
     currentSum += arr[i];
