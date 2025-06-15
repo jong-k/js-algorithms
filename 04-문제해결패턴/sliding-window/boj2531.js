@@ -1,3 +1,4 @@
+// 백준 2531 회전초밥
 const readline = require("readline");
 
 const rl = readline.createInterface({
