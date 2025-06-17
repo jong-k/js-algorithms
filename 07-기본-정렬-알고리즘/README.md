@@ -139,3 +139,46 @@ sort()는 모든 배열에 작동하지는 않는다
 - 효율적이지 않다 (데이터가 어느정도 정렬됐을 때만 빠르다)
 - 온라인 알고리즘에 유리 (새로운 데이터가 들어오는대로 작동하는 알고리즘) -> 전체 배열을 한 번에 정렬할 필요가 없음
   - 라이브, 스트리밍 방식으로 들어온 데이터를 즉시 입력하는 상황에 편리하다
+
+## 4. 버블, 선택, 삽입 정렬 비교
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">알고리즘</th>
+      <th scope="col">시간 복잡도(Best)</th>
+      <th scope="col">시간 복잡도(Average)</th>
+      <th scope="col">시간 복잡도(Worst)</th>
+      <th scope="col">공간 복잡도</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">버블 정렬</th>
+      <td>O(N)</td>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <th scope="row">선택 정렬</th>
+      <td>O(N)</td>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(1)</td>
+    </tr>
+    <tr>
+      <th scope="row">삽입 정렬</th>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(N^2)</td>
+      <td>O(1)</td>
+    </tr>
+  </tbody>
+</table>
+
+정리
+
+- 버블, 선택, 삽입 정렬은 평균적으로 O(N^2)의 시간 복잡도를 가진다
+- 데이터가 어느정도 정렬된 상황에서 버블, 삽입 정렬은 매우 빠르다
+- 하지만 어느정도 정열된 상황에서도 선택 정렬은 빠르지 않다
