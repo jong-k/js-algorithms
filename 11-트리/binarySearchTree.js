@@ -45,4 +45,64 @@ class BinarySearchTree {
     }
     return false;
   }
+  // bfs, dfs 등은 반드시 이진 탐색 트리에서만 사용 가능한 것은 아님 (일반 트리에서도 사용 가능)
+  bfs() {
+    if (!this.root) return [];
+    const queue = [];
+    const visited = [];
+    queue.push(this.root);
+
+    while (queue.length) {
+      const current = queue.shift();
+      visited.push(current.value);
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+    return visited;
+  }
+
+  dfsPreOrder() {
+    if (!this.root) return [];
+    const visited = [];
+    const traverse = (node) => {
+      visited.push(node.value);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return visited;
+  }
+
+  dfsPostOrder() {
+    if (!this.root) return [];
+    const visited = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      visited.push(node.value);
+    };
+    traverse(this.root);
+    return visited;
+  }
+
+  dfsInOrder() {
+    if (!this.root) return [];
+    const visited = [];
+    const traverse = (node) => {
+      if (node.left) traverse(node.left);
+      visited.push(node.value);
+      if (node.right) traverse(node.right);
+    };
+    traverse(this.root);
+    return visited;
+  }
 }
+
+const bst = new BinarySearchTree();
+bst.insert(10);
+bst.insert(6);
+bst.insert(15);
+bst.insert(3);
+bst.insert(8);
+bst.insert(20);
+console.log(bst.dfsPostOrder());
