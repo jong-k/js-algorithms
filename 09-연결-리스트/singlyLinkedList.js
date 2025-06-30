@@ -133,6 +133,27 @@ class SinglyLinkedList {
     return this;
   }
 
+  rotate(num) {
+    const newNum = num % this.length;
+    if (newNum === 0 || this.length <= 1) return this;
+
+    if (newNum < 0) {
+      this.rotate(this.length + newNum);
+    } else {
+      let current = this.head;
+      for (let i = 0; i < newNum - 1; i++) {
+        current = current.next;
+      }
+      const newHead = current.next;
+      current.next = null;
+      this.tail.next = this.head;
+      this.head = newHead;
+      this.tail = current;
+    }
+
+    return this;
+  }
+
   print() {
     const arr = [];
     let current = this.head;

@@ -98,6 +98,38 @@ reverse(): 리스트 내 노드의 순서를 바꿈
 - current, prev 변수를 생성하고 current를 진행하며 next를 반전시킴
 - 변경된 리스트 반환
 
+rotate(num): 양수를 받으면 왼쪽으로, 음수를 받으면 오른쪽으로 num 만큼 회전하고 리스트 반환
+
+- 예시
+
+```js
+/*
+1 2 3 4 5
+
+rotate(-2) // 4 5 1 2 3
+rotate(2) // 3 4 5 1 2
+rotate(3) // 4 5 1 2 3
+
+음수 회전과 양수 회전의 관계
+rotate(-2) = rotate(3)
+->일반화 하면,
+rotate(음수) = rotate(this.length + 음수)
+
+rotate(2) 예시
+
+H       T
+1 2 3 4 5
+
+
+   T H
+1 2 3 4 5
+*/
+```
+
+- O(N) 내에 해결하기 위해 push, pop, unshift, shift 등의 메서드를 사용하지 않는다
+- 대신 기존의 tail과 head를 연결하여 리스트가 원형이 되게 만들고
+- head와 tail을 회전하고 재지정한다
+
 ### 시간 복잡도
 
 - 삽입: O(1)
