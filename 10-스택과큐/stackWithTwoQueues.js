@@ -32,7 +32,7 @@ class Queue {
     this.size = 0;
   }
   enqueue(data) {
-    var node = new Node(data);
+    const node = new Node(data);
 
     if (!this.first) {
       this.first = node;
@@ -48,7 +48,7 @@ class Queue {
   dequeue() {
     if (!this.first) return null;
 
-    var temp = this.first;
+    const temp = this.first;
     if (this.first == this.last) {
       this.last = null;
     }
@@ -57,3 +57,13 @@ class Queue {
     return temp.value;
   }
 }
+
+// test cases 추가
+
+const stack = new Stack();
+stack.push(10).push(20).push(30);
+console.log(stack.pop()); // 30
+stack.push(40).push(50);
+console.log(stack.pop()); // 50
+console.log(stack.pop()); // 40
+console.log(stack.pop()); // 20
