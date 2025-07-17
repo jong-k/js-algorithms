@@ -8,11 +8,11 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
   },
-  { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: globals.browser } },
+  { files: ["**/*.{js,mjs,cjs}"], languageOptions: { globals: globals.node } },
   {
     rules: {
       "no-var": "error",
-      "prefer-const": "error",
+      "prefer-const": "warn",
     },
   },
 ]);
