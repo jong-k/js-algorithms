@@ -96,6 +96,33 @@ reverse(): 리스트 내 노드의 순서를 바꿈
 
 - head와 Tail을 바꾼다
 - current, prev 변수를 생성하고 current를 진행하며 next를 반전시킴
+- 예시
+
+```js
+/*
+1 -> 2 -> 3 -> 4 -> 5 라고 할 때,
+
+1) head, tail 스왑 (current에 head 임시 저장하여 순회 시 사용)
+current = head
+head = tail
+tail = current
+
+2) next 역전 (prev = null 저장하여 1, 2, 3, 4 를 각각 새로운 next에 추가)
+current 는 1 -> 2 -> 3 -> 4 -> 5 이므로 current 를 순회
+
+current -> next
+--------------
+1 -> null
+2 -> 1
+3 -> 2
+4 -> 3
+5 -> 4
+
+결과
+5 -> 4 -> 3 -> 2 -> 1 -> null
+*/
+```
+
 - 변경된 리스트 반환
 
 rotate(num): 양수를 받으면 왼쪽으로, 음수를 받으면 오른쪽으로 num 만큼 회전하고 리스트 반환

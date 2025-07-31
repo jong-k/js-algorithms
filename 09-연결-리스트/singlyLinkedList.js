@@ -124,11 +124,9 @@ class SinglyLinkedList {
     while (current) {
       // 순회를 위한 next 저장
       const next = current.next;
-      console.log("🚀 ~ SinglyLinkedList ~ reverse ~ next:", next);
       // next 역전
       current.next = prev;
       prev = current;
-      console.log("🚀 ~ SinglyLinkedList ~ reverse ~ prev:", prev);
       current = next;
     }
 
