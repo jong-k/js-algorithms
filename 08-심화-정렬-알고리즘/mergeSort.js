@@ -10,28 +10,31 @@ function mergeSort(arr) {
 
 // merge 함수 -> 두 개의 정렬된 배열을 합치는 함수
 function merge(arr1, arr2) {
-  const mergedArr = [];
-  let leftIndex = 0;
-  let rightIndex = 0;
+  if (arr1.length === 0) return arr2;
+  if (arr2.length === 0) return arr1;
 
-  while (leftIndex < arr1.length && rightIndex < arr2.length) {
-    if (arr1[leftIndex] <= arr2[rightIndex]) {
-      mergedArr.push(arr1[leftIndex]);
-      leftIndex++;
+  const mergedArr = [];
+  let leftIdx = 0;
+  let rightIdx = 0;
+
+  while (leftIdx < arr1.length && rightIdx < arr2.length) {
+    if (arr1[leftIdx] <= arr2[rightIdx]) {
+      mergedArr.push(arr1[leftIdx]);
+      leftIdx++;
     } else {
-      mergedArr.push(arr2[rightIndex]);
-      rightIndex++;
+      mergedArr.push(arr2[rightIdx]);
+      rightIdx++;
     }
   }
 
-  while (leftIndex < arr1.length) {
-    mergedArr.push(arr1[leftIndex]);
-    leftIndex++;
+  while (leftIdx < arr1.length) {
+    mergedArr.push(arr1[leftIdx]);
+    leftIdx++;
   }
 
-  while (rightIndex < arr2.length) {
-    mergedArr.push(arr2[rightIndex]);
-    rightIndex++;
+  while (rightIdx < arr2.length) {
+    mergedArr.push(arr2[rightIdx]);
+    rightIdx++;
   }
 
   return mergedArr;
